@@ -2,7 +2,7 @@ import React from "react";
 
 const PieChartCard = () => {
   return (
-    <div className="h-[62px] w-[62px] bg-gray-400 p-1 rounded-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-black hover:border-4">
+    <div className="h-[62px] w-[62px] bg-gray-400 p-1 rounded-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-gray-200 hover:border-4">
       <svg
         version="1.1"
         id="Icons"
