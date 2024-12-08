@@ -13,12 +13,12 @@ const TooltipComponent = ({ children, text }: TooltipComponentProps) => {
       <Tooltip.Root>
         <Tooltip.Trigger asChild>{children}</Tooltip.Trigger>
         <Tooltip.Content
-          side="top"
+          side="bottom"
           align="center"
-          className="bg-black text-white text-sm px-2 py-1 rounded shadow-md"
+          className="h-full w-full bg-blue-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-300 text-black text-sm px-2 py-1  shadow-md"
         >
           {text}
-          <Tooltip.Arrow className="fill-black" />
+          <Tooltip.Arrow className="fill-white" />
         </Tooltip.Content>
       </Tooltip.Root>
     </Tooltip.Provider>

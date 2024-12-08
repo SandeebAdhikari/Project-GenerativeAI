@@ -8,7 +8,7 @@ import PieChartCard from "@/components/PieChartCard";
 import ContactCard from "@/components/ContactCard";
 import NavBar from "@/components/NavBar";
 import Sidebar from "@/components/Sidebar";
-import Tooltip from "@/components/Tooltip";
+import TooltipComponent from "@/components/TooltipComponent";
 
 export default function Home() {
   return (
@@ -18,29 +18,45 @@ export default function Home() {
           <Sidebar />
         </div>
         <div className="absolute top-[56px] left-[812px] inset-1 opacity-0 hover:opacity-100 hover:cursor-pointer">
-          <MailCard />
+          <TooltipComponent text="Recruiter @mail format!">
+            <MailCard />
+          </TooltipComponent>
         </div>
         <div className="absolute top-[97px] left-[947px] inset-1  opacity-0 hover:opacity-100 hover:cursor-pointer">
-          <WebPageCard />
+          <TooltipComponent text="Create a new SaaS platform!">
+            <WebPageCard />
+          </TooltipComponent>
         </div>
         <div className="absolute top-[191px] left-[1044px] inset-1 opacity-0 hover:opacity-100 hover:cursor-pointer">
-          <ProfileCard />
+          <TooltipComponent text="Create a Portfolio webpage!">
+            <ProfileCard />
+          </TooltipComponent>
         </div>
         <div className="absolute top-[213px] left-[849px] inset-1  opacity-0 hover:opacity-100 hover:cursor-pointer">
-          <PieChartCard />
+          <TooltipComponent text="Learn to Create a graph!">
+            <PieChartCard />
+          </TooltipComponent>
         </div>
 
         <div className="absolute top-[240px] left-[1158px] inset-1   opacity-0 hover:opacity-100 hover:cursor-pointer">
-          <ResumeCard />
+          <TooltipComponent text="Create a new Resume!">
+            <ResumeCard />
+          </TooltipComponent>
         </div>
         <div className="absolute top-[478px] left-[1146px] inset-1   opacity-0 hover:opacity-100 hover:cursor-pointer">
-          <ContactCard />
+          <TooltipComponent text="Have question? Contact Us!">
+            <ContactCard />
+          </TooltipComponent>
         </div>
         <div className="absolute top-[445px] left-[602px] inset-1   opacity-0 hover:opacity-100 hover:cursor-pointer">
-          <Github />
+          <TooltipComponent text="Create a new GitHub account!">
+            <Github />
+          </TooltipComponent>
         </div>
         <div className="absolute top-[145px] left-[700px] inset-1   opacity-0 hover:opacity-100 hover:cursor-pointer ">
-          <CoverLetter />
+          <TooltipComponent text="Create a new Cover Letter!">
+            <CoverLetter />
+          </TooltipComponent>
         </div>
         <div className="absolute top-[100px] left-[1800px] inset-1   hover:opacity-100 hover:cursor-pointer ">
           <NavBar />
