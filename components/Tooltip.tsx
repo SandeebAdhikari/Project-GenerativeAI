@@ -1,14 +1,28 @@
-import React from "react";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
-const Tooltip = ({ children, text }) => {
+import { ReactNode } from "react";
+
+interface TooltipComponentProps {
+  children: ReactNode;
+  text: string;
+}
+
+const TooltipComponent = ({ children, text }: TooltipComponentProps) => {
   return (
-    <div className="relative group inline-block">
-      {children}
-      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 px-3 py-1 text-white bg-black text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        {text}
-      </div>
-    </div>
+    <Tooltip.Provider>
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild>{children}</Tooltip.Trigger>
+        <Tooltip.Content
+          side="top"
+          align="center"
+          className="bg-black text-white text-sm px-2 py-1 rounded shadow-md"
+        >
+          {text}
+          <Tooltip.Arrow className="fill-black" />
+        </Tooltip.Content>
+      </Tooltip.Root>
+    </Tooltip.Provider>
   );
 };
 
-export default Tooltip;
+export default TooltipComponent;

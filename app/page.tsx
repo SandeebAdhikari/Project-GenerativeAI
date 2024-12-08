@@ -8,6 +8,7 @@ import PieChartCard from "@/components/PieChartCard";
 import ContactCard from "@/components/ContactCard";
 import NavBar from "@/components/NavBar";
 import Sidebar from "@/components/Sidebar";
+import Tooltip from "@/components/Tooltip";
 
 export default function Home() {
   return (
