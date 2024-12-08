@@ -11,11 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        grayBlue: "#647196",
       },
       backgroundImage: {
         "custom-pattern": "url('/images/20.png')",
       },
     },
   },
-  plugins: [require("tailwindcss"), require("autoprefixer")],
+  plugins: [],
 } satisfies Config;
