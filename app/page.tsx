@@ -6,6 +6,7 @@ import CoverLetter from "@/components/CoverLetter";
 import WebPageCard from "@/components/WebPageCard";
 import PieChartCard from "@/components/PieChartCard";
 import ContactCard from "@/components/ContactCard";
+import NavBar from "@/components/NavBar";
 
 export default function Home() {
   return (
@@ -35,6 +36,9 @@ export default function Home() {
         </div>
         <div className="absolute top-[145px] left-[700px] inset-1   opacity-0 hover:opacity-100 hover:cursor-pointer ">
           <CoverLetter />
+        </div>
+        <div className="absolute top-[100px] left-[1800px] inset-1   hover:opacity-100 hover:cursor-pointer ">
+          <NavBar />
         </div>
       </div>
     </div>
