@@ -9,7 +9,7 @@ const NavBar = () => {
         alt="Picture of the author"
         width={65}
         height={65}
-        className="rounded-full p-1"
+        className="rounded-full p-1 hover:cursor-pointer hover:scale-105"
       />
 
       <Image
@@ -17,13 +17,14 @@ const NavBar = () => {
         alt="Picture of the author"
         width={65}
         height={65}
+        className="hover:cursor-pointer hover:scale-105 "
       />
       <Image
         src="/icons/coverletter.svg"
         alt="Picture of the author"
         width={65}
         height={65}
-        className="rounded-full"
+        className="rounded-full hover:cursor-pointer hover:scale-105"
       />
 
       <Image
@@ -31,14 +32,14 @@ const NavBar = () => {
         alt="Picture of the author"
         width={65}
         height={65}
-        className=" p-2"
+        className="hover:cursor-pointer hover:scale-105 p-2"
       />
       <Image
         src="/icons/piechart.svg"
         alt="Picture of the author"
         width={65}
         height={65}
-        className="rounded-full"
+        className="rounded-full hover:cursor-pointer hover:scale-105"
       />
 
       <Image
@@ -46,14 +47,14 @@ const NavBar = () => {
         alt="Picture of the author"
         width={65}
         height={65}
-        className="rounded-full"
+        className="rounded-full hover:cursor-pointer hover:scale-105"
       />
       <Image
         src="/icons/mail.svg"
         alt="Picture of the author"
         width={65}
         height={65}
-        className="rounded-full"
+        className="rounded-full hover:cursor-pointer hover:scale-105"
       />
     </div>
   );
