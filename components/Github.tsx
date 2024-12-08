@@ -2,7 +2,7 @@ import React from "react";
 
 const Github = () => {
   return (
-    <div className="flex items-center justify-center h-[45px] w-[68px] p-3 bg-gray-400 rounded-sm bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-black hover:border-4">
+    <div className="flex items-center justify-center h-[45px] w-[68px] p-3 bg-gray-400 rounded-sm bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-black hover:border-2">
       <svg
         fill="#000000"
         width="45px"

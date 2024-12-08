@@ -32,33 +32,33 @@ export default function Home() {
             <ProfileCard />
           </TooltipComponent>
         </div>
-        <div className="absolute top-[213px] left-[849px] inset-1  opacity-0 hover:opacity-100 hover:cursor-pointer">
+        <div className="absolute top-[213px] left-[849px] inset-1 opacity-0 hover:opacity-100 hover:cursor-pointer">
           <TooltipComponent text="Learn to Create a graph!">
             <PieChartCard />
           </TooltipComponent>
         </div>
 
-        <div className="absolute top-[240px] left-[1158px] inset-1   opacity-0 hover:opacity-100 hover:cursor-pointer">
+        <div className="absolute top-[240px] left-[1158px] inset-1 opacity-0 hover:opacity-100 hover:cursor-pointer">
           <TooltipComponent text="Create a new Resume!">
             <ResumeCard />
           </TooltipComponent>
         </div>
-        <div className="absolute top-[478px] left-[1146px] inset-1   opacity-0 hover:opacity-100 hover:cursor-pointer">
+        <div className="absolute top-[478px] left-[1144px] inset-1 opacity-0 hover:opacity-100 hover:cursor-pointer">
           <TooltipComponent text="Have question? Contact Us!">
             <ContactCard />
           </TooltipComponent>
         </div>
-        <div className="absolute top-[445px] left-[602px] inset-1   opacity-0 hover:opacity-100 hover:cursor-pointer">
+        <div className="absolute top-[445px] left-[602px] inset-1 opacity-0 hover:opacity-100 hover:cursor-pointer">
           <TooltipComponent text="Create a new GitHub account!">
             <Github />
           </TooltipComponent>
         </div>
-        <div className="absolute top-[145px] left-[700px] inset-1   opacity-0 hover:opacity-100 hover:cursor-pointer ">
+        <div className="absolute top-[143px] left-[700px] inset-1 opacity-0 hover:opacity-100 hover:cursor-pointer ">
           <TooltipComponent text="Create a new Cover Letter!">
             <CoverLetter />
           </TooltipComponent>
         </div>
-        <div className="absolute top-[100px] left-[1800px] inset-1   hover:opacity-100 hover:cursor-pointer ">
+        <div className="absolute top-[100px] left-[1800px] inset-1  hover:opacity-100 hover:cursor-pointer ">
           <NavBar />
         </div>
       </div>

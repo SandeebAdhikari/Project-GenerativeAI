@@ -2,7 +2,7 @@ import React from "react";
 
 const CoverLetter = () => {
   return (
-    <div className="flex items-center justify-center h-[58px] w-[75px] p-3 bg-red-400 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-black hover:border-4 hover:scale-105">
+    <div className="flex items-center justify-center h-[62px] w-[75px] p-3 bg-red-400 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-black border-4 scale-105">
       <svg
         fill="#000000"
         version="1.1"

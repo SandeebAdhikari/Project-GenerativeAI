@@ -2,7 +2,7 @@ import React from "react";
 
 const WebPageCard = () => {
   return (
-    <div className="flex items-center justify-center h-[90px] w-[90px] p-4 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-black hover:border-4 ">
+    <div className="flex items-center justify-center h-[90px] w-[90px] p-4 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-gray-200 hover:border-4 ">
       <svg
         version="1.1"
         id="WEBPAGE"

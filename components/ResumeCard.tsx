@@ -2,7 +2,7 @@ import React from "react";
 
 const ResumeCard = () => {
   return (
-    <div className="flex w-[115px] h-[80px] items-center justify-center bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-black hover:border-4 ">
+    <div className="flex w-[115px] h-[80px] items-center justify-center bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-black hover:border-2">
       <div className="hover:scale-105 transition-transform ease-in-out">
         <svg
           version="1.1"

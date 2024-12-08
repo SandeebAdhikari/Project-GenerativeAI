@@ -2,7 +2,7 @@ import React from "react";
 
 const MailCard = () => {
   return (
-    <div className="flex items-center justify-center h-[49px] w-[70px] p-3 bg-gray-400 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-black hover:border-4 hover:border-t-0">
+    <div className="flex items-center justify-center h-[49px] w-[70px] p-3 bg-gray-400 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 hover:border-gray-200 hover:border-4 hover:border-t-0">
       <svg
         version="1.1"
         id="Layer_1"
