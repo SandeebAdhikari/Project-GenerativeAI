@@ -4,24 +4,30 @@ import React, { useState } from "react";
 interface FormData {
   fullName: string;
   email: string;
+  address: string;
+  state: string;
+  zipCode: string;
   phone: string;
   jobTitle: string;
   companyName: string;
-  interest: string;
   skills: string;
   achievements: string;
+  jobDescription: string;
 }
 
 const CoverLetterForm = () => {
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
+    address: "",
+    state: "",
+    zipCode: "",
     phone: "",
     jobTitle: "",
     companyName: "",
-    interest: "",
     skills: "",
     achievements: "",
+    jobDescription: "",
   });
 
   const handleInputChange = (
@@ -50,13 +56,12 @@ const CoverLetterForm = () => {
 
       if (!response.ok) {
         const errorResponse = await response.text();
-        console.error("Error from server:", errorResponse); // Debug: Log server error response
+        console.error("Error from server:", errorResponse);
         throw new Error("Failed to generate cover letter");
       }
 
       const pdfBlob: Blob = await response.blob();
 
-      // Create a URL for the blob and trigger a download
       const url: string = URL.createObjectURL(pdfBlob);
       window.open(url, "_blank");
 
@@ -69,11 +74,11 @@ const CoverLetterForm = () => {
       link.click();
       link.remove();
 
-      console.log("Cover letter downloaded successfully."); // Debug: Log success
+      console.log("Cover letter downloaded successfully.");
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error("Error occurred:", error.message);
-        alert(`Error: ${error.message}`); // User-friendly error message
+        alert(`Error: ${error.message}`);
       } else {
         console.error("An unknown error occurred");
         alert("An unknown error occurred. Please try again.");
@@ -82,7 +87,7 @@ const CoverLetterForm = () => {
   };
 
   return (
-    <div className="relative h-[855px] w-[575px] bg-gray-600 p-4 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-300">
+    <div className="mt-5 relative h-[905px] w-[595px] bg-gray-600 p-4 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-300">
       <div className="absolute -top-12 left-0 p-4">
         <svg
           width="66"
@@ -104,7 +109,7 @@ const CoverLetterForm = () => {
       <h1 className="mt-5 text-2xl font-bold text-black ">
         Create New Cover Letter
       </h1>
-      <form className="mt-5 flex flex-col gap-2" onSubmit={handleSubmit}>
+      <form className="mt-5 flex flex-col gap-1" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="fullName" className="block text-black font-semibold">
             Full Name
@@ -118,6 +123,7 @@ const CoverLetterForm = () => {
             placeholder="Full Name"
           />
         </div>
+
         <div>
           <label htmlFor="email" className="block text-black font-semibold">
             Email Address
@@ -130,6 +136,47 @@ const CoverLetterForm = () => {
             className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white"
             placeholder="@example.com"
           />
+        </div>
+        <div className="flex gap-2">
+          <div>
+            <label htmlFor="address" className="block text-black font-semibold">
+              Address
+            </label>
+            <input
+              id="address"
+              type="address"
+              value={formData.address}
+              onChange={handleInputChange}
+              className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white"
+              placeholder="(e.g., 1234 Main St)"
+            />
+          </div>
+          <div>
+            <label htmlFor="state" className="block text-black font-semibold">
+              State
+            </label>
+            <input
+              id="state"
+              type="state"
+              value={formData.state}
+              onChange={handleInputChange}
+              className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white"
+              placeholder="(e.g., CA, NY)"
+            />
+          </div>
+          <div>
+            <label htmlFor="zipCode" className="block text-black font-semibold">
+              Zip Code
+            </label>
+            <input
+              id="zipCode"
+              type="zip"
+              value={formData.zipCode}
+              onChange={handleInputChange}
+              className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white"
+              placeholder="(e.g., 12345)"
+            />
+          </div>
         </div>
         <div>
           <label htmlFor="phone" className="block text-black font-semibold">
@@ -144,6 +191,7 @@ const CoverLetterForm = () => {
             placeholder="(XXX-XXX-XXXX)"
           />
         </div>
+
         <div>
           <label htmlFor="jobTitle" className="block text-black font-semibold">
             Job Title
@@ -174,12 +222,15 @@ const CoverLetterForm = () => {
           />
         </div>
         <div>
-          <label htmlFor="interest" className="block text-black font-semibold">
-            Why Are You Interested in This Role?
+          <label
+            htmlFor="jobDescription"
+            className="block text-black font-semibold"
+          >
+            Job Description
           </label>
           <textarea
-            id="interest"
-            value={formData.interest}
+            id="jobDescription"
+            value={formData.jobDescription}
             onChange={handleInputChange}
             className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
             placeholder="Explain why you are interested in this role"
