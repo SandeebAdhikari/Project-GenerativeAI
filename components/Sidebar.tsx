@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Tooltip from "@next/tooltip";
 import React from "react";
 
 const Sidebar = () => {
@@ -11,6 +12,7 @@ const Sidebar = () => {
         height={105}
         className="mt-10 rounded-full p-1 hover:cursor-pointer hover:scale-105 border-2 border-gray-400"
       />
+
       <h1 className="mt-2 text-3xl font-bold text-gray-800">JOHN DOE</h1>
 
       <div className="mt-24 w-full">
