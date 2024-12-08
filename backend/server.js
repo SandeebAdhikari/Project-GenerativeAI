@@ -3,6 +3,8 @@ const { OpenAI } = require("openai");
 
 const puppeteer = require("puppeteer");
 const cors = require("cors");
+const fs = require("fs");
+
 require("dotenv").config();
 
 const app = express();
@@ -14,19 +16,29 @@ const openai = new OpenAI({
 });
 
 const generateText = async (prompt) => {
-  const response = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt,
-    max_tokens: 1000,
-  });
-  return response.data.choices[0].text.trim();
+  try {
+    const response = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        { role: "user", content: prompt },
+      ],
+      max_tokens: 1000,
+    });
+    return response.choices[0].message.content.trim();
+  } catch (error) {
+    console.error("OpenAI API error:", error);
+    throw new Error("Failed to generate text");
+  }
 };
 
 const generatePDF = async (html) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.setContent(html);
-  const pdfBuffer = await page.pdf({ format: "A4" });
+  console.log("HTML Content:", html);
+  const pdfBuffer = await page.pdf({ format: "A4", printBackground: true });
+  console.log("PDF Buffer Length:", pdfBuffer.length);
   await browser.close();
   return pdfBuffer;
 };
@@ -61,22 +73,37 @@ app.post("/generate-cover-letter", async (req, res) => {
   `;
 
   try {
-    const coverLetterText = await generateText(coverLetterPrompt);
+    const generatedText = await generateText(coverLetterPrompt);
 
     const coverLetterHtml = `
       <html>
-        <head><style>body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }</style></head>
+        <head>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              padding: 20px;
+            }
+          </style>
+        </head>
         <body>
           <h1>Cover Letter</h1>
-          <p>${coverLetterText.replace(/\n/g, "<br>")}</p>
+          <p>${generatedText.replace(/\n/g, "<br>")}</p>
         </body>
       </html>
     `;
 
     const pdfBuffer = await generatePDF(coverLetterHtml);
 
-    res.contentType("application/pdf");
-    res.send(pdfBuffer);
+    fs.writeFileSync("output.pdf", pdfBuffer);
+    console.log("PDF saved to server as output.pdf");
+
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=cover_letter.pdf"
+    );
+    res.end(pdfBuffer);
   } catch (error) {
     console.error(error);
     res.status(500).send("Failed to generate cover letter");

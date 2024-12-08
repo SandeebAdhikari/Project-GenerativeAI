@@ -31,11 +31,13 @@ const CoverLetterForm = () => {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
+    console.log("Submitting form data:", formData); // Debug: Log the form data
+
     try {
-      const response = await fetch(
+      const response: Response = await fetch(
         "http://localhost:3000/generate-cover-letter",
         {
           method: "POST",
@@ -47,25 +49,34 @@ const CoverLetterForm = () => {
       );
 
       if (!response.ok) {
+        const errorResponse = await response.text();
+        console.error("Error from server:", errorResponse); // Debug: Log server error response
         throw new Error("Failed to generate cover letter");
       }
 
-      // Receive PDF buffer
-      const pdfBlob = await response.blob();
+      const pdfBlob: Blob = await response.blob();
 
-      // Create a link to download the PDF
-      const url = window.URL.createObjectURL(pdfBlob);
-      const link = document.createElement("a");
+      // Create a URL for the blob and trigger a download
+      const url: string = URL.createObjectURL(pdfBlob);
+      window.open(url, "_blank");
+
+      console.log("Downloaded Blob Size:", pdfBlob.size);
+
+      const link: HTMLAnchorElement = document.createElement("a");
       link.href = url;
       link.setAttribute("download", "cover_letter.pdf");
       document.body.appendChild(link);
       link.click();
       link.remove();
-    } catch (error) {
+
+      console.log("Cover letter downloaded successfully."); // Debug: Log success
+    } catch (error: unknown) {
       if (error instanceof Error) {
-        console.error(error.message);
+        console.error("Error occurred:", error.message);
+        alert(`Error: ${error.message}`); // User-friendly error message
       } else {
         console.error("An unknown error occurred");
+        alert("An unknown error occurred. Please try again.");
       }
     }
   };
