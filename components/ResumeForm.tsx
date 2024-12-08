@@ -25,7 +25,7 @@ const ResumeForm = () => {
       <form className="mt-5 flex flex-col gap-2">
         {/* Professional Summary */}
         <div>
-          <label htmlFor="summary" className="block text-black font-medium">
+          <label htmlFor="summary" className="block text-black font-semibold">
             Professional Summary
           </label>
           <textarea
@@ -38,7 +38,10 @@ const ResumeForm = () => {
 
         {/* Work Experience */}
         <div>
-          <label htmlFor="experience" className="block text-black font-medium">
+          <label
+            htmlFor="experience"
+            className="block text-black font-semibold"
+          >
             Work Experience
           </label>
           <textarea
@@ -51,7 +54,7 @@ const ResumeForm = () => {
 
         {/* Education */}
         <div>
-          <label htmlFor="education" className="block text-black font-medium">
+          <label htmlFor="education" className="block text-black font-semibold">
             Education
           </label>
           <textarea
@@ -64,7 +67,7 @@ const ResumeForm = () => {
 
         {/* Technical Skills */}
         <div>
-          <label htmlFor="skills" className="block text-black font-medium">
+          <label htmlFor="skills" className="block text-black font-semibold">
             Technical Skills
           </label>
           <input
@@ -79,7 +82,7 @@ const ResumeForm = () => {
         <div>
           <label
             htmlFor="certifications"
-            className="block text-black font-medium"
+            className="block text-black font-semibold"
           >
             Certifications
           </label>
@@ -93,7 +96,7 @@ const ResumeForm = () => {
 
         {/* Hobbies/Interests */}
         <div>
-          <label htmlFor="hobbies" className="block text-black font-medium">
+          <label htmlFor="hobbies" className="block text-black font-semibold">
             Hobbies/Interests (Optional)
           </label>
           <input
