@@ -5,19 +5,16 @@ import ProfileCard from "@/components/ProfileCard";
 
 export default function Home() {
   return (
-    <>
-      <div className=" flex flex-col items-center justify-center w-full h-screen">
-        <div className="relative w-full h-full ">
-          <Image src={Background} alt="background" objectFit="cover" />
+    <div className="bg-custom-pattern  bg-center h-screen w-screen bg-no-repeat bg-white">
+      <div className="relative flex flex-col items-center justify-center ">
+        <div className="absolute top-[191px] left-[1044px] inset-1 opacity-0 hover:opacity-100 hover:cursor-pointer">
+          <ProfileCard />
+        </div>
 
-          <div className="absolute w-full h-full top-[500px] left-[1320px] inset-0 ">
-            <ResumeCard />
-          </div>
-          <div className="absolute w-full h-full top-[415px] left-[1115px] inset-0 ">
-            <ProfileCard />
-          </div>
+        <div className="absolute top-[240px] left-[1158px] inset-1  opacity-0 hover:opacity-100 hover:cursor-pointer">
+          <ResumeCard />
         </div>
       </div>
-    </>
+    </div>
   );
 }

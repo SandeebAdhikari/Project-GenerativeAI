@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       backgroundImage: {
-        "custom-pattern": "url('/images/17.png')",
+        "custom-pattern": "url('/images/20.png')",
       },
     },
   },
