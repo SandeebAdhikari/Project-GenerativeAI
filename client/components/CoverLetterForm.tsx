@@ -40,7 +40,7 @@ const CoverLetterForm = () => {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
-    console.log("Submitting form data:", formData); // Debug: Log the form data
+    console.log("Submitting form data:", formData);
 
     try {
       const response: Response = await fetch(

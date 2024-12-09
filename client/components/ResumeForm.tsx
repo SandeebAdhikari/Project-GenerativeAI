@@ -1,8 +1,64 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 const ResumeForm = () => {
+  const [formData, setFormData] = useState({
+    summary: "",
+    experience: "",
+    education: "",
+    skills: "",
+    certifications: "",
+    Projects: "",
+  });
+
+  const handleChange: React.ChangeEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response: Response = await fetch(
+        "http://localhost:3000/generate-resume",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to generate resume");
+      }
+
+      const pdfBlob: Blob = await response.blob();
+
+      const url: string = window.URL.createObjectURL(pdfBlob);
+      const link: HTMLAnchorElement = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "resume.pdf");
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      } else {
+        console.error("An unknown error occurred");
+      }
+    }
+  };
   return (
-    <div className="relative h-[875px] w-[575px] bg-gray-600 p-4 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-300">
+    <div className="mt-5 relative h-[900px] w-[575px] bg-gray-600 p-4 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-300">
       <div className="absolute -top-12 left-0 p-4">
         <svg
           width="66"
@@ -22,8 +78,7 @@ const ResumeForm = () => {
         </svg>
       </div>
       <h1 className="mt-5 text-2xl font-bold text-black ">Create New Resume</h1>
-      <form className="mt-5 flex flex-col gap-2">
-        {/* Professional Summary */}
+      <form className="mt-5 flex flex-col gap-1" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="summary" className="block text-black font-semibold">
             Professional Summary
@@ -31,12 +86,12 @@ const ResumeForm = () => {
           <textarea
             id="summary"
             className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
-            placeholder="A brief summary about your career goals and expertise"
+            placeholder="Briefly describe your professional background and career goals"
             rows={3}
+            onChange={handleChange}
           ></textarea>
         </div>
 
-        {/* Work Experience */}
         <div>
           <label
             htmlFor="experience"
@@ -47,12 +102,12 @@ const ResumeForm = () => {
           <textarea
             id="experience"
             className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
-            placeholder="Include job title, company, location, start and end dates, and key responsibilities"
+            placeholder="Job title, company, location, and dates of employment"
             rows={4}
+            onChange={handleChange}
           ></textarea>
         </div>
 
-        {/* Education */}
         <div>
           <label htmlFor="education" className="block text-black font-semibold">
             Education
@@ -60,12 +115,12 @@ const ResumeForm = () => {
           <textarea
             id="education"
             className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
-            placeholder="Include degree, institution, location, graduation year, and major"
+            placeholder="Degree, major, University, location, and graduation year"
             rows={4}
+            onChange={handleChange}
           ></textarea>
         </div>
 
-        {/* Technical Skills */}
         <div>
           <label htmlFor="skills" className="block text-black font-semibold">
             Technical Skills
@@ -75,10 +130,10 @@ const ResumeForm = () => {
             type="text"
             className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
             placeholder="(e.g., JavaScript, Python, React)"
+            onChange={handleChange}
           />
         </div>
 
-        {/* Certifications */}
         <div>
           <label
             htmlFor="certifications"
@@ -89,21 +144,22 @@ const ResumeForm = () => {
           <textarea
             id="certifications"
             className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
-            placeholder="Include certification name and issuing organization"
+            placeholder="(e.g., AWS Certified Solutions Architect, Google IT Support Professional)"
             rows={3}
+            onChange={handleChange}
           ></textarea>
         </div>
 
-        {/* Hobbies/Interests */}
         <div>
-          <label htmlFor="hobbies" className="block text-black font-semibold">
-            Hobbies/Interests (Optional)
+          <label htmlFor="project" className="block text-black font-semibold">
+            Projects
           </label>
-          <input
-            id="hobbies"
-            type="text"
+          <textarea
+            id="project"
             className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
-            placeholder="(e.g., Reading, Traveling, Painting)"
+            placeholder="(e.g., Portfolio website, E-commerce app)"
+            rows={3}
+            onChange={handleChange}
           />
         </div>
 
