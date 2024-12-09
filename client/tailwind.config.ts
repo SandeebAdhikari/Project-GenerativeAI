@@ -16,6 +16,9 @@ export default {
       backgroundImage: {
         "custom-pattern": "url('/images/20.png')",
       },
+      fontFamily: {
+        jost: ["Jost", "sans-serif"],
+      },
     },
   },
   plugins: [],

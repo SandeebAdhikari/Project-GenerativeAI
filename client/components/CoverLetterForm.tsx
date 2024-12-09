@@ -119,7 +119,7 @@ const CoverLetterForm = () => {
             type="text"
             value={formData.fullName}
             onChange={handleInputChange}
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-300"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-300 text-black font-medium"
             placeholder="Full Name"
           />
         </div>
@@ -133,7 +133,7 @@ const CoverLetterForm = () => {
             type="email"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white text-black font-medium"
             placeholder="@example.com"
           />
         </div>
@@ -147,7 +147,7 @@ const CoverLetterForm = () => {
               type="address"
               value={formData.address}
               onChange={handleInputChange}
-              className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white"
+              className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white text-black font-medium"
               placeholder="(e.g., 1234 Main St)"
             />
           </div>
@@ -160,7 +160,7 @@ const CoverLetterForm = () => {
               type="state"
               value={formData.state}
               onChange={handleInputChange}
-              className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white"
+              className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white text-black font-medium"
               placeholder="(e.g., CA, NY)"
             />
           </div>
@@ -173,7 +173,7 @@ const CoverLetterForm = () => {
               type="zip"
               value={formData.zipCode}
               onChange={handleInputChange}
-              className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white"
+              className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-white text-black font-medium"
               placeholder="(e.g., 12345)"
             />
           </div>
@@ -187,7 +187,7 @@ const CoverLetterForm = () => {
             type="tel"
             value={formData.phone}
             onChange={handleInputChange}
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="(XXX-XXX-XXXX)"
           />
         </div>
@@ -201,7 +201,7 @@ const CoverLetterForm = () => {
             type="text"
             value={formData.jobTitle}
             onChange={handleInputChange}
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="(e.g.,Software Engineer, Product Manager)"
           />
         </div>
@@ -217,7 +217,7 @@ const CoverLetterForm = () => {
             type="text"
             value={formData.companyName}
             onChange={handleInputChange}
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="(e.g.,Google, Facebook)"
           />
         </div>
@@ -232,7 +232,7 @@ const CoverLetterForm = () => {
             id="jobDescription"
             value={formData.jobDescription}
             onChange={handleInputChange}
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="Explain why you are interested in this role"
             rows={3}
           ></textarea>
@@ -246,7 +246,7 @@ const CoverLetterForm = () => {
             type="text"
             value={formData.skills}
             onChange={handleInputChange}
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="(e.g., JavaScript, teamwork)"
           />
         </div>
@@ -261,7 +261,7 @@ const CoverLetterForm = () => {
             id="achievements"
             value={formData.achievements}
             onChange={handleInputChange}
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="Highlight top 2-3 achievements"
             rows={3}
           ></textarea>

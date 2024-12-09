@@ -85,7 +85,7 @@ const ResumeForm = () => {
           </label>
           <textarea
             id="summary"
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="Briefly describe your professional background and career goals"
             rows={3}
             onChange={handleChange}
@@ -101,7 +101,7 @@ const ResumeForm = () => {
           </label>
           <textarea
             id="experience"
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="Job title, company, location, and dates of employment"
             rows={4}
             onChange={handleChange}
@@ -114,7 +114,7 @@ const ResumeForm = () => {
           </label>
           <textarea
             id="education"
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="Degree, major, University, location, and graduation year"
             rows={4}
             onChange={handleChange}
@@ -128,7 +128,7 @@ const ResumeForm = () => {
           <input
             id="skills"
             type="text"
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="(e.g., JavaScript, Python, React)"
             onChange={handleChange}
           />
@@ -143,7 +143,7 @@ const ResumeForm = () => {
           </label>
           <textarea
             id="certifications"
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="(e.g., AWS Certified Solutions Architect, Google IT Support Professional)"
             rows={3}
             onChange={handleChange}
@@ -156,7 +156,7 @@ const ResumeForm = () => {
           </label>
           <textarea
             id="project"
-            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100"
+            className="w-full p-2 rounded-md border border-gray-200 hover:border-gray-500 focus:outline-none bg-transparent placeholder-gray-100 text-black font-medium"
             placeholder="(e.g., Portfolio website, E-commerce app)"
             rows={3}
             onChange={handleChange}
