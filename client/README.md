@@ -1,5 +1,5 @@
 # Student CDS
 
-## Resume Builder
+### Resume Builder
 
-## Cover Letter Builder
+### Cover Letter Builder
