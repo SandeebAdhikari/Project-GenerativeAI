@@ -151,7 +151,7 @@ app.post("/generate-resume", async (req, res) => {
     req.body;
 
   const resumePrompt = `
-    Create a professional resume with the following details and use the provided sample resume as a reference to structure the content:
+    Create a professional resume with the following details and use the provided sample resume as a reference to structure the content. :
 
     - Professional Summary: ${summary}
     - Work Experience: ${experience}
@@ -159,9 +159,10 @@ app.post("/generate-resume", async (req, res) => {
     - Technical Skills: ${skills}
     - Certifications: ${certifications}
     - Projects: ${projects} 
-
+    
     All topic are bold, example: "Professional Summary" bolded. All topics sub categories are semi-bolded, example: "Capital One 	New York, NY 
-    Full-Stack Developer 	Oct '23 - Present"," Loan Approval Automation System for Capital One" semi-bolded, but not the topic sub categories description are not bolded.
+    Full-Stack Developer 	Oct '23 - Present"," Loan Approval Automation System for Capital One" semi-bolded, but not the topic sub categories description are not bolded. Make sure to structure the resume with bolded section headings and semibolded subheadings. Ensure proper formatting for a professional appearance.
+
 
     Sample Resume:
 
@@ -246,7 +247,22 @@ app.post("/generate-resume", async (req, res) => {
     · Methodologies and Practices: Agile Development, Test Driven Development, Object Oriented Programming, Continuous 
     Integration/Continuous Deployment (CI/CD) pipelines, Domain-Driven Design (DDD), Event-Driven Architecture (EDA) 
 
+     Format the output using HTML tags:
+    Create a professional resume in **HTML** format with the following requirements:
 
+      1. **Section Titles**:
+        - Use <h2> tags for section titles like **Professional Summary**, **Work Experience**, **Education**, **Technical Skills**, **Certifications**, and **Projects**.
+
+      2. **Subheadings**:
+        - Use <strong> tags for company names, job titles, and project titles (e.g., <strong>Company Name</strong> and <strong>Job Title</strong>).
+
+      3. **Descriptions**:
+        - Use <p> tags for detailed descriptions and responsibilities.
+        - Use <ul> and <li> tags for listing tasks, responsibilities, and achievements.
+
+      4. **Links**:
+        - Include links using the <a> tag (e.g., <a href="URL">Certification Name</a>).
+ 
   `;
 
   try {
